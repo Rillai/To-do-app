@@ -1,0 +1,30 @@
+.task{
+    display: flex;
+    position: relative;
+    height: 50px;
+    justify-content: center; 
+}
+.task input{
+    font-size: 18px;
+    position: relative;
+    width: 450px;
+    border: 0;
+    margin-left: 20px;
+}
+.task input:focus{
+    left: -5px;
+border-bottom: solid 2px blue;
+}
+.completeButton{
+    position: relative;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+.deleteButton{
+    position: relative;
+    right: 5px;
+    color: #F4483C;
+    cursor: pointer;
+    font-size: 23px;
+}

@@ -1,0 +1,42 @@
+.to-do-form{
+  display: flex;
+  position: relative;
+}
+.h_task{
+  font-size: 16px;
+  position: absolute;
+  text-align: center;
+  height: 20px;
+  width: 42px;
+  background-color: white;
+  left: 15px;
+  z-index: 1;
+}
+.h_task span{
+  position: relative;
+  color: gray;
+  bottom: 4px;
+}
+.to-do-form input{
+    border: 0;
+    margin: 10px;
+    margin-bottom: 30px;
+    width: 320px;
+    height: 50px;
+    padding: 0 20px;
+    border-radius: 3px;
+    box-shadow: 0 0 1px 2px #D0D0D0;
+    font-size: 18px;
+}
+.to-do-form button{
+    margin: 8px;
+    background-color: white;
+    border-radius: 5px;
+    border: 2px solid #A0CFA2;
+    color: #A0CFA2;
+    width: 140px;
+    height: 54px;
+    margin-left: 5px;
+    font-weight: bolder;
+    font-size: 16px;
+}
