@@ -4,10 +4,13 @@ import checkbox from '../../assets/img/checkbox.jpg'
 import checkboxA from '../../assets/img/checkboxA.jpg'
 
 export let Tasks = (props) => {
-    let newTaskBody = React.createRef();
-    let onNewTaskChange = (id) => {
-        let text = newTaskBody.current.value;
-        props.updateNewTaskBody(id, text);
+    let onNewTaskChange = (id, e) => {
+        let text = e.target.value;
+        props.onNewTaskChange(id, text);
+    }
+    let newTaskBody = (id, e) => {
+        let text = e.target.value;
+        props.newTaskBody(id, text);
     }
     return (<div>
         {
@@ -19,7 +22,7 @@ export let Tasks = (props) => {
                     : <img src={checkbox} alt="Error"
                         className='completeButton'
                         onClick={() => { props.isDone(t.id, true) }} />}
-                    <input maxLength="25" type='text' value={t.task} ref={newTaskBody} onChange={() => onNewTaskChange(t.id)} />
+                    <input maxLength="25" type='text' value={t.task} onChange={(e)=>{onNewTaskChange(t.id, e)}}  onBlur={(e)=>{newTaskBody(t.id, e)}}/>
                     <span className='deleteButton' onClick={() => { props.deleteTask(t.id) }}>X</span>
                 </div>
             </div>)

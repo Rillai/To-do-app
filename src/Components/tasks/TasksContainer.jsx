@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { deleteTask, getTasks, isDone, updateNewTaskBody } from '../../redux/tasks-reducers';
+import { deleteTask, getTasks, isDone, updateNewTaskBody, updateNewTaskBodyAction } from '../../redux/tasks-reducers';
 import { Tasks } from './Tasks';
 
 export class TasksContainer extends React.Component {
@@ -12,7 +12,8 @@ export class TasksContainer extends React.Component {
             deleteTask={this.props.deleteTask}
             tasks={this.props.tasks}
             isDone={this.props.isDone}
-            updateNewTaskBody={this.props.updateNewTaskBody}
+            onNewTaskChange={this.props.updateNewTaskBodyAction}
+            newTaskBody={this.props.updateNewTaskBody}
         />
     }
 }
@@ -21,4 +22,4 @@ let mapStateToProps = (state) => {
         tasks: state.tasksPage.tasks,
     }
 }
-export default connect(mapStateToProps, { deleteTask, getTasks, isDone, updateNewTaskBody })(TasksContainer);
+export default connect(mapStateToProps, { deleteTask, getTasks, isDone, updateNewTaskBody, updateNewTaskBodyAction })(TasksContainer);

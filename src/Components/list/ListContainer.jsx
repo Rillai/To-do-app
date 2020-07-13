@@ -1,4 +1,4 @@
-import { addTask, updateNewTaskText } from '../../redux/tasks-reducers';
+import { addTask, updateNewTaskTextAction } from '../../redux/tasks-reducers';
 import { connect } from 'react-redux';
 import { List } from './List';
 
@@ -8,4 +8,4 @@ let mapStateToProps = (props) => {
         newTaskText: props.tasksPage.newTaskText,
     }
 }
-export const ListContainer = connect(mapStateToProps, {addTask, updateNewTaskText })(List);
+export const ListContainer = connect(mapStateToProps, {addTask, updateNewTaskTextAction })(List);
